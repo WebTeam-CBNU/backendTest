@@ -3,12 +3,12 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     margin:5%;
-    -ms-overflow-style: none; 
-    scrollbar-width: none;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 .rowscroll::-webkit-scrollbar {
-    display: none;
+    display: none; /* Chrome, Safari, Opera*/
 }
 
 .subject-block {

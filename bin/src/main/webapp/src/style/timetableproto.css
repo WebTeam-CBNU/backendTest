@@ -1,0 +1,150 @@
+body div {
+  display : flex;
+  flex-direction: column;
+}
+
+caption{
+  font-size: 100px;
+  margin-bottom: 10px;
+  color: blue;
+
+}
+
+label{
+	margin:5px;
+}
+
+
+button{
+	margin:5px;
+	font-size: 100;
+
+}
+
+.title {
+	display: flex;
+	flex-direction: row;
+	position: absolute;
+	top: 12vh;
+	left: 51vw;
+	transform: translate(-40%, -50%);
+	background: linear-gradient(45deg, rgba(60, 60, 60, 0.3), rgba(60, 60, 60, 0.5)) ;
+	border-radius: 15px 15px 0px 0px;
+	font-family: 'Kdam Thmor Pro', sans-serif;
+	
+}
+
+.title div {
+	padding: 1vw;
+	width: 10vw;
+	height: 3vh;
+	font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	position: absolute;
+	top: 15vh;
+	left: 15vw;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+.time {
+	background: linear-gradient(225deg, rgba(60, 60, 60, 0.3), rgba(60, 60, 60, 0.5)) ;
+	border-radius: 15px 0px 0px 15px;
+}
+
+.time div {
+	padding: 1vw;
+	width: 10vw;
+	height: 4vh;
+}
+
+.schedule div {
+	padding: 1vw;
+	width: 10vw;
+	height: 4vh;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+#favDialog:hover{
+	border-radius: 15px 15px 15px 15px;
+	border-color: #BBB;
+	font-family: 'Kdam Thmor Pro', sans-serif;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	transform: translateY(-10px);
+
+}
+#container:hover{
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	transform: translateY(-10px);
+}
+.schedule:hover{
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	transform: translateY(-10px);
+}
+dialog form #box_button 
+{
+	font-weight: 200;
+	border-radius: 12px;
+	color:aquamarine;
+}
+.form+#contextbox
+{
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	transform: translateY(-10px);
+}
+
+
+.classNotToday{
+	background-color: #CCC;
+}
+
+.classToday{
+	background-color: pink;
+}
+
+.firstBlock{
+	border-radius: 20px 20px 0px 0px;
+}
+
+.lastBlock{
+	border-radius: 0px 0px 20px 20px;
+}
+
+label {
+	display: flex;
+	justify-content:space-between
+}
+
+label div {
+	padding-right: 20px;
+}
+
+input, select {
+	width: 100px;
+}
+
+.oneBlock{
+	border-radius: 20px 20px 20px 20px;
+}
+
+#box_button {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+#box_button button {
+	font-size: 10pt;
+	height: 30px;
+	width: 100px;
+}
+
