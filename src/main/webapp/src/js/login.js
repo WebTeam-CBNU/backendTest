@@ -1,6 +1,8 @@
 const favDialog = document.getElementById('favDialog');
-const loginBtn = document.getElementById('loginbutton')
-const closeBtn = document.getElementsByClassName('closeModal')[0]
+const favDialog_register = document.getElementById('favDialog_register');
+const loginBtn = document.getElementById('loginbutton');
+const registerBtn=document.getElementById('registerbutton');
+const closeBtn = document.getElementsByClassName('closeModal')[0];
 
 if ( typeof favDialog.showModal !== 'function' ) {
     favDialog.hidden = true;
@@ -31,5 +33,40 @@ if ( typeof favDialog.showModal !== 'function' ) {
   });
 
   favDialog.addEventListener('close', ()=>{
+    
+  })
+
+
+
+
+  if ( typeof favDialog_register.showModal !== 'function' ) {
+    favDialog_register.hidden = true;
+    /* a fallback script to allow this dialog/form to function
+       for legacy browsers that do not support <dialog>
+       could be provided here.
+    */
+  }
+
+registerBtn.addEventListener('click', ()=> {
+    if (typeof favDialog_register.showModal === "function") {
+      favDialog_register.showModal();
+      // Cancel button
+      document.querySelectorAll(".user-registerbox input").forEach((elememt)=>{
+          elememt.defaultValue = "test"
+      })
+      // Confirm button
+    } else {
+
+    }
+    console.log("fuck")
+  })
+
+  closeBtn.addEventListener('click', ()=> {
+    favDialog_register.close();
+    // closeBtn.focus();
+    // document.getElementsByTagName("body")[0].style.overflow = "auto";
+  });
+
+  favDialog_register.addEventListener('close', ()=>{
     
   })
