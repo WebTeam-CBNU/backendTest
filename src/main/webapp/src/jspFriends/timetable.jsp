@@ -27,7 +27,7 @@
 <body>
 <div id="box" class="box">
     <div class="homebutton">
-        <a href="main.html">HOME</a>
+        <a href="main.jsp">HOME</a>
     </div>
     <div id="contain">
         <div class="title">
@@ -109,7 +109,7 @@
 </div>
 <dialog id="favDialog">
     <form id="context" method="dialog">
-        <label>어느 요일이냐?
+        <label><div>어느 요일이냐?</div>
             <select id="weekDay">
                 <option value="mon">월요일</option>
                 <option value="tue">화요일</option>
@@ -118,7 +118,7 @@
                 <option value="fri">금요일</option>
             </select>
         </label>
-        <label>몇시 시작이냐?
+        <label><div>몇시 시작이냐?</div>
             <select id="classStartTime">
                 <option value="class1">1교시(09:00~10:00)</option>
                 <option value="class2">2교시(10:00~11:00)</option>
@@ -131,7 +131,7 @@
                 <option value="class9">9교시(17:00~18:00)</option>
             </select>
         </label>
-        <label>몇시 끝나냐?
+        <label><div>몇시 끝나냐?</div>
             <select id="classEndTime">
                 <option value="class1">1교시(09:00~10:00)</option>
                 <option value="class2">2교시(10:00~11:00)</option>
@@ -144,13 +144,13 @@
                 <option value="class9">9교시(17:00~18:00)</option>
             </select>
         </label>
-        <label>어느 교수님이냐?
+        <label><div>어느 교수님이냐?</div>
             <input type="text" id="professor">
         </label>
-        <label>건물은?
+        <label><div>건물은?</div>
             <input type="text" id="building">
         </label>
-        <label>강의실은?
+        <label><div>강의실은?</div>
             <input type="text" id="classRoom">
         </label>
         <div id="box_button">
@@ -162,4 +162,3 @@
 <script src="../js/timetable.js"></script>
 </body>
 </html>
-
