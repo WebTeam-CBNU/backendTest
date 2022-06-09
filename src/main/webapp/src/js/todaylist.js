@@ -22,11 +22,14 @@ function showSchedule(num) {
     amBox.setAttribute("id", "amBox");
     leftBox[0].appendChild(amBox)
 
+
     for (i = 0; i < 12; i++) {
         const ToDoByAmTime = document.createElement('div');
         ToDoByAmTime.innerHTML =
             `<input type='checkbox' name='amBox' value='am` + i + `' style='margin:6px;'/><p>&nbsp오전할일` + i + `~</p><br><br>     `;
         document.getElementById(`amBox`).appendChild(ToDoByAmTime);
+
+
     }
 
 
@@ -57,12 +60,5 @@ function showSchedule(num) {
         }
     }
 
-    var aa = new Date()
-    var year = aa.getFullYear()
-    var month = aa.getMonth()+1
-    var date = aa.getDate()
-    var dayLabel = aa.getDay()
-
-    getElementById('dayday').innerHTML=""+year+"."+month+"."+dayLabel
 
 }
