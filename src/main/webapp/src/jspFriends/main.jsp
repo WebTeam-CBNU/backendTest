@@ -1,4 +1,4 @@
-<%@ page import="com.proto.controller.mainServlet" %><%--
+<%@ page import="com.proto.controller.registServlet" %><%--
   Created by IntelliJ IDEA.
   User: gimsangsu
   Date: 2022/06/09
@@ -23,7 +23,23 @@
 <div id="box" class="box">
     <div class="first-innerbox" style="width: 26%;">
         <div class="innerbox">
-            <div id="loginbutton" class="loginbutton_default" onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" >로그인</div>
+                <%
+                    session = request.getSession();
+                    if(session.getAttribute("userName") != null) {
+                        System.out.println("why succuess");
+                %>
+                    <div id="loginbutton" class="loginbutton_default" onmousedown="mouseDown(this.id)" onclick="logout()" onmouseup="mouseUp(this.id)" >
+                <%= session.getAttribute("userName")%>
+                <%
+                    } else {
+                        System.out.println("why fail!");
+                %>
+                    <div id="loginbutton" class="loginbutton_default" onmousedown="mouseDown(this.id)" onclick="login()" onmouseup="mouseUp(this.id)" >
+                로그인
+                <%
+                    }
+                %>
+            </div>
         </div>
         <div class="innerbox" style="height: 90%;">
             <div id="button1" class="button_default" onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onClick="location.href='timetableproto.html'">시간표</div>
@@ -94,13 +110,13 @@
         <!-- <form id="context" method="dialog"> -->
         <div class="login-box">
             <h2>Login</h2>
-            <form method="dialog">
+            <form method="post" action="<%= request.getContextPath() %>/login">
                 <div class="user-box">
-                    <input type="text" name="name" required="">
+                    <input type="text" name="login_name">
                     <label>Username</label>
                 </div>
                 <div class="user-box">
-                    <input type="password" name="password" required="">
+                    <input type="password" name="login_password">
                     <label>Password</label>
                 </div>
                 <div class="btnList">
@@ -116,13 +132,13 @@
         <!-- <form id="context" method="dialog"> -->
         <div class="register-box">
             <h2>Register</h2>
-            <form method="post" action="<%= request.getContextPath() %>/insert">
+            <form method="post" action="<%= request.getContextPath() %>/registUser">
                 <div class="user-registerbox">
-                    <input type="text" name="name" required="">
+                    <input type="text" name="regist_name">
                     <label>ID</label>
                 </div>
                 <div class="user-registerbox">
-                    <input type="password" name="password" required="">
+                    <input type="password" name="regist_password">
                     <label>Password</label>
                 </div>
                 <div class="btnList">
