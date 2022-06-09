@@ -54,33 +54,29 @@ function confirm(){
 
 var i = 0
 
-document.getElementsByClassName('hour')
-  .forEach(()=>{
-    
-  })
-  .ondragstart(()=>{
+for(i=0;i<45;i++){
+  document.getElementsByClassName('hour')[i].ondragstart = function(e) {
+    for(j=0;j<45;j++){
+      if(document.getElementsByClassName('hour')[j]==this) e.dataTransfer.setData('data', j);
+    }
+  };
 
-  })
-//  = function(e) {
-  // const indexNum=i;
-  // console.log(indexNum);
-  // e.dataTransfer.setData('data', indexNum); // 드래그해보세요 문자열 전달
-
-document.getElementsByClassName('hour')[i].ondragover = function(e) {
-  e.preventDefault(); // 필수 이 부분이 없으면 ondrop 이벤트가 발생하지 않습니다.
-};
+  document.getElementsByClassName('hour')[i].ondragover = function(e) {
+    e.preventDefault(); // 필수 이 부분이 없으면 ondrop 이벤트가 발생하지 않습니다.
+  };
+}
 
 
-document.getElementsByClassName('hour')[1].ondrop = function(e) {
-  const dataN = document.getElementsByClassName('hour')[1].innerHTML;
-  document.getElementsByClassName('hour')[1].innerHTML=e.dataTransfer.getData('data');
-  document.getElementsByClassName('hour')[0].innerHTML=dataN;
-};
+for(i=0;i<45;i++){
+  document.getElementsByClassName('hour')[i].ondrop = function(e) {
 
 
-
-document.getElementsByClassName('hour')[3].ondrop = function(e) {
-  const dataN = document.getElementsByClassName('hour')[3].innerHTML;
-  document.getElementsByClassName('hour')[3].innerHTML=e.dataTransfer.getData('data');
-  document.getElementsByClassName('hour')[2].innerHTML=dataN;
-};
+    for(j=0;j<45;j++){
+      if(document.getElementsByClassName('hour')[j]==this) {
+        const dataN = document.getElementsByClassName('hour')[j].innerHTML;
+        document.getElementsByClassName('hour')[j].innerHTML=document.getElementsByClassName('hour')[e.dataTransfer.getData('data')].innerHTML;
+        document.getElementsByClassName('hour')[e.dataTransfer.getData('data')].innerHTML=dataN;
+      }
+    }
+  }
+}
