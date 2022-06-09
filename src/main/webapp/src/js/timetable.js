@@ -20,7 +20,7 @@ updateButton.forEach((items) => {
           favDialog.showModal();
           // Cancel button
           document.querySelectorAll('#box_button button')[0].style.color ="#778899"
-          document.querySelectorAll('#box_button button')[0].style.fontweight="50000"
+          // document.querySelectorAll('#box_button button')[0].style.fontweight="500"
           // Confirm button
           document.querySelectorAll('#box_button button')[1].style.color = "#778899"
         } else {

@@ -6,14 +6,23 @@ function addCheck() {
     checklist.innerHTML = "fuck!"
 }
 
-const tempArray = ["1", "2", "&nbsp", "4", "5", "&nbsp", "&nbsp", "test5", "test4", "test3", "test2", "test1"]
-
 // for (let i = 0; i < tempArray.length; i++) {
 //     console.log([i].innerHTML);
 //     document.querySelectorAll("#amBox div")[i].innerHTML=tempArray[i];
 // }  
 
-function showSchedule()
+function mouseDown() {
+    if(!document.getElementsByClassName(Monday)[0].classList.contains("clicked")){
+        document.getElementsByClassName(Monday)[0].classList.add("clicked");
+    }
+  }
+
+
+  function mouseUp() {
+    document.getElementsByClassName(Monday)[0].classList.add("clicked");
+}   
+
+function showSchedule(daynum)
 {
 
     const removedAmBox=document.getElementById('amBox');
@@ -22,6 +31,7 @@ function showSchedule()
     const amBox = document.createElement('div');
     amBox.setAttribute("id" , "amBox");
     leftBox[0].appendChild(amBox)
+    
 
 
     for (i = 0; i < 12; i++) {
@@ -49,19 +59,19 @@ function showSchedule()
     }
 
 
-    function mouseDown() {
-        if(!document.getElementsByClassName(Monday)[0].classList.contains("clicked")){
-            document.getElementsByClassName(Monday)[0].classList.add("clicked");
-        }
-      }
 
 
-      function mouseUp() {
-        if(document.getElementsByClassName(Monday)[0].classList.contains("clicked")){
-            document.getElementsByClassName(Monday)[0].classList.remove("clicked");
-        }
-    }
+    let nowWeekDay = new Date().getDay()
+            
+    var a = new Date()
+    var aa = new Date(a.setDate(a.getDate()-nowWeekDay+daynum))
+    var year = aa.getFullYear()
+    var month = aa.getMonth()+1
+    var date = aa.getDate()
+    var dayLabel = aa.getDay()
+    var week = new Array('Sun','Mon','Tue','Wed','Thur','Fri','Sat');
 
+    document.getElementById('printDay').innerHTML=""+year+"."+month+"."+date+" "+week[dayLabel]
 
 }
 
