@@ -43,59 +43,59 @@
         <div>9교시<br>17:00 ~ 18:00</div>
       </div>
       <div class="schedule">
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
       </div>
       <div class="schedule">
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
       </div>
       <div class="schedule">
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
       </div>
       <div class="schedule">
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
       </div>
       <div class="schedule">
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
-        <div>-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
+        <div class="hour">-</div>
       </div>
     </div>      
 </div>
@@ -103,7 +103,7 @@
 <dialog id="favDialog">
   <form id="context" method="dialog">
       <label>어느 요일이냐?
-        <select>
+        <select id="weekDay">
           <option value="mon">월요일</option>
           <option value="tue">화요일</option>
           <option value="wed">수요일</option>
@@ -112,7 +112,7 @@
         </select>
       </label>
       <label>몇시 수업이냐?
-        <select>
+        <select id="classTime">
           <option value="class1">1교시(09:00~10:00)</option>
           <option value="class2">2교시(10:00~11:00)</option>
           <option value="class3">3교시(11:00~12:00)</option>
@@ -125,17 +125,17 @@
         </select>
       </label>
       <label>어느 교수님이냐?
-        <input type="professor">
+        <input type="text" id="professor">
       </label>
       <label>건물은?
-        <input type="building">
+        <input type="text" id="building">
       </label>
       <label>강의실은?
-        <input type="classroom">
+        <input type="text" id="classRoom">
       </label>
     <div id="box_button">
       <button value="cancel">Cancel</button>
-      <button id="confirmBtn" value="default">Confirm</button>
+      <button id="confirmBtn" value="default" onclick="confirm();">Confirm</button>
     </div>
   </form>
 </dialog>

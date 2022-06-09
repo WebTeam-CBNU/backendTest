@@ -12,7 +12,7 @@ function createHomework(subjectId) {
     newHomework.setAttribute("class", "homework");
     
     newHomework.innerHTML = 
-          `<input type='checkbox' name='${subjectId}' value='${homeworkNum}' style='margin:6px;'/><p>새로운 과제~</p>`;
+          `<input type='checkbox' name='${subjectId}' value='${homeworkNum}' style='margin:6px;'/><p contenteditable='true'>새로운 과제~</p>`;
 
     document.getElementById(`${subjectId}`).appendChild(newHomework);
   } 
@@ -30,7 +30,7 @@ function createHomework(subjectId) {
 
     newSubject.setAttribute("class", "subject-block");
     newSubject.innerHTML = `
-    <div class="subject-title">과목 이름</div>
+    <div class="subject-title" contenteditable='true'>과목 이름</div>
     <div id='${subjectNum}'>
     </div>
     <div class="add-homework" onclick="createHomework('${subjectNum}')">+</div>`;          
