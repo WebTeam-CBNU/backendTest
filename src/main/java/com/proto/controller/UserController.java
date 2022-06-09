@@ -39,6 +39,9 @@ public class UserController extends HttpServlet {
                 case "/insert":
                     insertUser(request, response);
                     break;
+                case "/login":
+                    LoginUser(request, response);
+                    break;
                 default:
                     System.out.println("this is fucking new form list book");
                     break;
@@ -60,4 +63,13 @@ public class UserController extends HttpServlet {
         response.sendRedirect("list");
     }
 
+    private void LoginUser(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException {
+        String name = request.getParameter("name");
+        String password = request.getParameter("password");
+
+        UserDTO user = new UserDTO(name, password);
+        userDAO.insertUser(user);
+        response.sendRedirect("list");
+    }
 }
