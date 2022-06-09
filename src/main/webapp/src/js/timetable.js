@@ -35,3 +35,19 @@ selectEl.addEventListener('change', function onSelect(e) {
 // "Confirm" button of form triggers "close" on dialog because of [method="dialog"]
 // favDialog.addEventListener('close', function onClose() {
 // });
+
+
+
+function confirm(){
+  const selectedWeekDay=document.getElementById("weekDay");
+  const selectedClassTime=document.getElementById("classTime");
+  const professor = document.getElementById("professor").value;
+  const building = document.getElementById("building").value;
+  const classRoom = document.getElementById("classRoom").value;
+
+
+  const hour=document.getElementsByClassName("hour");
+  const hourIndex=selectedWeekDay.selectedIndex * 9+selectedClassTime.selectedIndex;
+  hour[hourIndex].innerHTML=professor+"<br>"+building+"<br>"+classRoom;
+
+}
