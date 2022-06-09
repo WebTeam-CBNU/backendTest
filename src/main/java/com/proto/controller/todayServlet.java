@@ -1,4 +1,4 @@
 package com.proto.controller;
 
-public class TodoController {
+public class todayServlet {
 }

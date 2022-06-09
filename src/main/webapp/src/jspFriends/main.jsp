@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.proto.controller.mainServlet" %><%--
   Created by IntelliJ IDEA.
   User: gimsangsu
   Date: 2022/06/09
@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html lang="en">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -115,7 +116,7 @@
         <!-- <form id="context" method="dialog"> -->
         <div class="register-box">
             <h2>Register</h2>
-            <form method="dialog">
+            <form method="post" action="<%= request.getContextPath() %>/insert">
                 <div class="user-registerbox">
                     <input type="text" name="name" required="">
                     <label>ID</label>
