@@ -13,7 +13,7 @@ const tempArray = ["1", "2", "&nbsp", "4", "5", "&nbsp", "&nbsp", "test5", "test
 //     document.querySelectorAll("#amBox div")[i].innerHTML=tempArray[i];
 // }  
 
-function showSchedule() {
+function showSchedule(num) {
 
     const removedAmBox = document.getElementById('amBox');
     removedAmBox.remove();
@@ -56,4 +56,13 @@ function showSchedule() {
             document.getElementsByClassName(Monday)[0].classList.remove("clicked");
         }
     }
+
+    var aa = new Date()
+    var year = aa.getFullYear()
+    var month = aa.getMonth()+1
+    var date = aa.getDate()
+    var dayLabel = aa.getDay()
+
+    getElementById('dayday').innerHTML=""+year+"."+month+"."+dayLabel
+
 }
