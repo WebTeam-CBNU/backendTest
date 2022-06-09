@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WTF</title>
+        <link rel="stylesheet" href="../style/todaylist.css">
+        <link rel="stylesheet" href="../style/common.css">
+        
+    </head>
+    <body>
+        <div id="box" class="box">
+            <div id="twoTableContainer">
+                <div id="weeklyTable">
+                    <div class="Wtitle">
+                        <div>Weekly</div>
+                        <div>2022.06</div>
+                    </div>
+                    <div class="WBody">
+                        <div class="fuck"></div>
+                        <div class="Sunday" onmouseout="Sunday_onmouseout();" onmouseover="Sunday_onmouseover();" onclick="showSchedule();">Sun</div>
+                        <div class="Monday" onmouseout="Monday_onmouseout();" onmouseover="Monday_onmouseover();" >Mon</div>
+                        <div class="Tuesday"onmouseout="Tuesday_onmouseout();" onmouseover="Tuesday_onmouseover();">Tue</div>
+                        <div class="Wednesday"onmouseout="Wednesday_onmouseout();" onmouseover="Wednesday_onmouseover();">Wed</div>
+                        <div class="Thursday"onmouseout="Thursday_onmouseout();" onmouseover="Thursday_onmouseover();">Thur</div>
+                        <div class="Friday"onmouseout="Friday_onmouseout();" onmouseover="Friday_onmouseover();">Fri</div>
+                        <div class="Saturday"onmouseout="Saturday_onmouseout();" onmouseover="Saturday_onmouseover();">Sat</div>
+                    </div>
+                </div>
+                <div id="dailyTable">
+                    <div class="Dtitle">
+                        <div>daily</div>
+                        <div>2022.06.09</div>
+                    </div>
+                    <div class="DBody">
+                        <div class="am">am</div>
+                        <div class="blank"></div>
+                        <div class="pm">pm</div>
+                        <div class="leftBox">
+                            <div id="amBox"></div>
+                        </div>
+                        <div class="timeTable">12<br><br>1<br><br>2<br><br>3<br><br>4<br><br>5<br><br>6<br><br>7<br><br>8<br><br>9<br><br>10<br><br>11</div>
+                        <div class="rightBox">
+                            <div id="pmBox"></div>
+                        </div>
+                        <div class="checkbox">checkbox</div>
+                        <div class="plsBtn" onclick="addCheck()">
+                            <button>+</button>
+                        </div>
+                        <div class="checklist">checklist</div>
+                    </div>             
+                </div>
+            </div>
+        </div>
+    <script src="../js/todaylist.js"></script>
+    </body>
+</html>

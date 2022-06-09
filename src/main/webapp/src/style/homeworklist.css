@@ -1,0 +1,73 @@
+.rowscroll{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin:5%;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.rowscroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+.subject-block {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 97%;
+    border-radius: 42px;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: left;
+    background-color: #555555;
+    color:white;
+    display: inline-block;
+    box-shadow: 4px 4px 8px 4px rgb(50, 50, 50);
+}
+
+#subject-plus {
+    background-color: #E4EBF5;
+    color:black;
+    border:1px black dashed;
+    box-shadow: 0px 0px 0px 0px rgb(50, 50, 50);
+}
+
+.subject-title{
+      display: block;
+      text-align: center;
+      font-size: 25px;
+      margin-top: 35px;
+      margin-bottom: 70px;
+  }
+
+  .subject-plus{
+        display: block;
+        text-align: center;
+        font-size: 25px;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        padding-top:53%
+    }
+
+  .homework{
+      display: flex;
+      margin:20px;
+  }
+
+  .add-homework{
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border: 1px dotted;
+  }
+
+p {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+#subject-list {
+    display: flex;
+}

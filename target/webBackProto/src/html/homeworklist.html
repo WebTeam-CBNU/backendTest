@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WTF</title>
+        <link rel="stylesheet" href="../style/common.css">
+        <link rel="stylesheet" href="../style/homeworklist.css">
+        
+    </head>
+    <body>
+        <div id="box" class="box" style="display: flex; flex-wrap: nowrap; overflow-x: auto;">
+            <div class="rowscroll">
+                <div id="subject-list">
+                    <div class="subject-block">
+                        <div class="subject-title">웹 소프트웨어</div>
+                        <div id="subject1">
+                            <div class="homework">
+                                <input type='checkbox' name='subject1' value='homework1' style="margin:6px;"/>
+                                <p>이거 다 만들기!</p>
+                            </div>
+                            <div class="homework">
+                                <input type='checkbox' name='subject1' value='homework2' style="margin:6px;"/>
+                                <p>내용</p>
+                            </div>
+                            <div class="homework">
+                                <input type='checkbox' name='subject1' value='homework3' style="margin:6px;"/>
+                                <p>!</p>
+                            </div>
+                        </div>
+                        <div class="add-homework" onclick="createHomework('subject1')">+</div>
+                    </div>
+                    <div class="subject-block">
+                        <div class="subject-title">전문 프로젝트</div>
+                        <div class="homework">
+                            <input type='checkbox' name='subject1' value='homework1' style="margin:6px;"/>
+                            <p>이건 또 언제하냐</p>
+                        </div>
+                        <div class="homework">
+                            <input type='checkbox' name='subject1' value='homework2' style="margin:6px;"/>
+                            <p>ㅠ</p>
+                        </div>
+                    </div>
+                    <div id="subject-plus" class="subject-block">
+                        <div class="subject-plus" onclick="createSubject()">+</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    <script src="../js/homeworklist.js"></script>
+    </body>
+</html>
