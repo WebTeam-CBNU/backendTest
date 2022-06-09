@@ -14,7 +14,7 @@ public class ScheduleDAO extends DbController {
 
     // insert
     public boolean insertSchedule(ScheduleDTO schedule) throws SQLException {
-        String query = "INSERT INTO schedule (id, user_id, dayOfWeek, start_time, end_time) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO schedule (id, user_id, dayOfWeek, start_time, end_time, prof, building, room) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         connect();
 
         PreparedStatement statement = this.getJdbcConnection().prepareStatement(query);
@@ -23,6 +23,9 @@ public class ScheduleDAO extends DbController {
         statement.setInt(3, schedule.getDayOfWeek());
         statement.setDate(4, new java.sql.Date(schedule.getStart_time().getTime()));
         statement.setDate(5, new java.sql.Date(schedule.getEnd_time().getTime()));
+        statement.setString(6, schedule.getProf());
+        statement.setString(7, schedule.getBuilding());
+        statement.setString(8, schedule.getRoom());
 
         boolean rowInserted = statement.executeUpdate() > 0;
         statement.close();
@@ -46,9 +49,12 @@ public class ScheduleDAO extends DbController {
             int dayOfWeek = resultSet.getInt("dayOfWeek");
             Date start_time = resultSet.getDate("start_time");
             Date end_time = resultSet.getDate("end_time");
+            String prof = resultSet.getString("prof");
+            String building = resultSet.getString("building");
+            String room = resultSet.getString("room");
 
-            ScheduleDTO schdule = new ScheduleDTO(id, user_id, dayOfWeek, start_time, end_time);
-            listSchedule.add(schdule);
+            ScheduleDTO schedule = new ScheduleDTO(id, user_id, dayOfWeek, start_time, end_time, prof, building, room);
+            listSchedule.add(schedule);
         }
         resultSet.close();
         statement.close();
@@ -90,6 +96,58 @@ public class ScheduleDAO extends DbController {
         return rowUpdated;
     }
 
-    // getById 그런게 필요할까?
+    // getByName 그런게 필요할까?
+    public List<ScheduleDTO> getByUserName(String name) throws SQLException {
+        List<ScheduleDTO> mySchedules = new ArrayList<>();
+        String query = "SELECT * FROM schedule WHERE user_id = ?";
 
+        connect();
+
+        PreparedStatement statement = this.getJdbcConnection().prepareStatement(query);
+        statement.setString(1, name);
+
+        ResultSet resultSet = statement.executeQuery();
+
+        if(resultSet.next()) {
+            int id = resultSet.getInt("id");
+            int user_id = resultSet.getInt("user_id");
+            int dayOfWeek = resultSet.getInt("dayOfWeek");
+            Date start_time = resultSet.getDate("start_time");
+            Date end_time = resultSet.getDate("end_time");
+            String prof = resultSet.getString("prof");
+            String building = resultSet.getString("building");
+            String room = resultSet.getString("room");
+
+            ScheduleDTO schedule = new ScheduleDTO(id, user_id, dayOfWeek, start_time, end_time, prof, building, room);
+            mySchedules.add(schedule);
+        }
+
+        return mySchedules;
+    }
+
+    public ScheduleDTO getById(int id) throws SQLException {
+    ScheduleDTO schedule = null;
+    String query = "SELECT * FROM schedule WHERE id = ?";
+
+    connect();
+
+    PreparedStatement statement = this.getJdbcConnection().prepareStatement(query);
+    statement.setInt(1, id);
+        ResultSet resultSet = statement.executeQuery();
+
+        if(resultSet.next()) {
+            int user_id = resultSet.getInt("user_id");
+            int dayOfWeek = resultSet.getInt("dayOfWeek");
+            Date start_time = resultSet.getDate("start_time");
+            Date end_time = resultSet.getDate("end_time");
+            String prof = resultSet.getString("prof");
+            String building = resultSet.getString("building");
+            String room = resultSet.getString("room");
+
+            schedule = new ScheduleDTO(id, user_id, dayOfWeek, start_time, end_time, prof, building, room);
+        }
+
+        return schedule;
+
+    }
 }
