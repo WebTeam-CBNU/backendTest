@@ -83,6 +83,99 @@
                 0 0 8px #03e9f4,
                 0 0 16px #03e9f4;
   }
+
+
+
+
+
+  #favDialog_register {
+    background: rgb(206, 211, 219);
+    border: none;
+    height: 75vh;
+    width: 28vw;
+}
+
+ .register-box {
+   width: 400px;
+   padding: 40px;
+   /* transform: translate(050%, -50%); */
+   background: rgba(123, 123, 123,.6);
+   box-sizing: border-box;
+   box-shadow: 0 15px 25px rgba(0,0,0,.6);
+   border-radius: 10px;
+   font-family: sans-serif;
+ }
+ 
+ .register-box h2 {
+   margin: 0 0 30px;
+   padding: 0;
+   color: #fff;
+   text-align: center;
+ }
+ 
+ .register-box .user-registerbox {
+   position: relative;
+   display: flex;
+   flex-direction: column-reverse;
+ }
+ 
+ .register-box .user-registerbox input {
+   display: block;
+   width: 100%;
+   padding: 10px 0;
+   font-size: 16px;
+   color: #fff;
+   margin-bottom: 30px;
+   border: none;
+   border-bottom: 1px solid #fff;
+   outline: none;
+   background: transparent;
+ }
+
+ .register-box .user-registerbox label {
+   text-align: left;
+   padding: 10px 0;
+   font-size: 16px;
+   color: #fff;
+   pointer-events: none;
+   transition: .5s;
+ }
+ 
+ .register-box .user-registerbox input:focus ~ label,
+ .register-box .user-registerbox input:valid ~ label {
+   color: #03e9f4;
+   font-size: 12px;
+ }
+ 
+ .register-box button {
+   /* position: relative; */
+   display: block;
+   padding: 10px 20px;
+   font-size: 16px;
+   text-decoration: none;
+   text-transform: uppercase;
+   overflow: hidden;
+   transition: .5s;
+   border: none;
+   background-color: rgba(123, 123, 123,0.0);
+   color: #03e9f4;
+   
+   margin-top: 40px;
+   letter-spacing: 4px
+ }
+
+ .register-box button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #03e9f4,
+                0 0 4px #03e9f4,
+                0 0 8px #03e9f4,
+                0 0 16px #03e9f4;
+  }
+
+
+
   /* .login-box a span {
     position: absolute;
     display: block;
