@@ -105,7 +105,28 @@
                 <div class="btnList">
                     <button href="#">Submit</button>
                     <button class="closeModal">Cancel</button>
-                    <button class="registerModal">register</button>
+                    <button class="registerModal" id="registerbutton">register</button>
+                </div>
+            </form>
+        </div>
+        <!-- </form> -->
+    </dialog>
+    <dialog id="favDialog_register">
+        <!-- <form id="context" method="dialog"> -->
+        <div class="register-box">
+            <h2>Register</h2>
+            <form method="dialog">
+                <div class="user-registerbox">
+                    <input type="text" name="name" required="">
+                    <label>ID</label>
+                </div>
+                <div class="user-registerbox">
+                    <input type="password" name="password" required="">
+                    <label>Password</label>
+                </div>
+                <div class="btnList">
+                    <button href="#">Submit</button>
+                    <button class="closeModal">Cancel</button>
                 </div>
             </form>
         </div>
