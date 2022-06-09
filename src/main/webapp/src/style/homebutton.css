@@ -17,7 +17,7 @@
     line-height: 1.667em;
     text-decoration: none;
     color: #8a9199;
-    cursor: pointer;
+    cursor: url(../cursor.png), default;
     background: #fff;
     transition: color,border-color ease 0.3s;
     border-radius: 2em;

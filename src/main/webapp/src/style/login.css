@@ -3,6 +3,7 @@
     border: none;
     height: 75vh;
     width: 28vw;
+    cursor: url(../cursor.png), default;
 }
 
  .login-box {
@@ -93,6 +94,7 @@
     border: none;
     height: 75vh;
     width: 28vw;
+    cursor: url(../cursor.png), default;
 }
 
  .register-box {
