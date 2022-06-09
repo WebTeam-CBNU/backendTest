@@ -57,27 +57,16 @@ function showSchedule()
         if(document.getElementsByClassName(Monday)[0].classList.contains("clicked")){
             document.getElementsByClassName(Monday)[0].classList.remove("clicked");
         }
-      }
+    }
 
+    var aa = new Date()
+    var year = aa.getFullYear()
+    var month = aa.getMonth()+1
+    var date = aa.getDate()
+    var dayLabel = aa.getDay()
 
-    /*
-    const allBox = Array.from(amBox).concat(Array.from(pmBox));
-    Array.from(allBox).forEach((element) => {
-        if(true){
+    getElementById('dayday').innerHTML=""+year+"."+month+"."+dayLabel
 
-            element.style.visibility = 'visible';
-            // for(var i=1; i<=12; i++){
-            //     if(document.getElementById("1a").innerHTML !== "")
-            //         document.getElementById("1a").innerHTML = "you 01a do"
-            //     else
-            //         console.log("test")
-            // }
-
-        }else{
-            con.style.visibility = 'hidden';
-        }
-    });
-    */
 }
 
 // function Sunday_onmouseover(){
