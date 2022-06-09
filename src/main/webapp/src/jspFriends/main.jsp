@@ -28,7 +28,7 @@
                     if(session.getAttribute("userName") != null) {
                         System.out.println("why succuess");
                 %>
-                    <div id="loginbutton" class="loginbutton_default" onmousedown="mouseDown(this.id)" onclick="logout()" onmouseup="mouseUp(this.id)" >
+                    <div id="loginbutton" class="loginbutton_default" onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onclick="location='logoutProc.jsp'">
                 <%= session.getAttribute("userName")%>
                 <%
                     } else {
@@ -150,8 +150,8 @@
         <!-- </form> -->
     </dialog>
 </div>
-<script src="../js/login.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/calendar.js"></script>
+<script src="../js/login.js?v=<%=System.currentTimeMillis() %>"></script>
+<script src="../js/main.js?v=<%=System.currentTimeMillis() %>"></script>
+<script src="../js/calendar.js?v=<%=System.currentTimeMillis() %>"></script>
 </body>
 </html>
