@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%--    <meta name="viewport" content="width=device-width, initial-scale=1.0">--%>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style/common.css">
 
@@ -159,6 +159,6 @@
         </div>
     </form>
 </dialog>
-<script src="../js/timetable.js"></script>
+<script src="../js/timetable.js?v=<%=System.currentTimeMillis() %>"></script>
 </body>
 </html>

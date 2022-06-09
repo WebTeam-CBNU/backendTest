@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../style/login.css">
     <title>정현이가 만드는 페이지</title>
 </head>
-<body>표
+<body>
 <div id="box" class="box">
     <div class="first-innerbox" style="width: 26%;">
         <div class="innerbox">

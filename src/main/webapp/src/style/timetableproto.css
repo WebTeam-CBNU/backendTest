@@ -136,3 +136,15 @@ input, select {
 	border-radius: 20px 20px 20px 20px;
 }
 
+#box_button {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+#box_button button {
+	font-size: 10pt;
+	height: 30px;
+	width: 100px;
+}
+
