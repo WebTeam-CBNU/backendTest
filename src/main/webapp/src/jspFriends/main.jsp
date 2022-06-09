@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../style/calendar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style/login.css">
-    <title>정현이가 만드는 메인페이지</title>
+    <title>정현이가 만드는 페이지</title>
 </head>
 <body>
 <div id="box" class="box">
@@ -83,17 +83,11 @@
 
     <div class="innerbox" style="width : 26%;">
         <div id="alert_box" class="alert_box">
-            <p>dd</p>
-            <p>dddd</p>
-            <p>dd</p>
-            <p>dddd</p>
-            <p>dd</p>
-            <p>ddddd</p>
-            <p>dd</p>
-            <p>dddd</p>
-            <p>dd</p>
-            <p>dddd</p>
-            <p>dd</p>
+            <p>Algorithm</p>
+            <p>Math </p>
+            <p>TOEIC R.C</p>
+            <p>Computer System</p>
+         
         </div>
         <div id="alert_box" class="alert_box" style="display: flex; text-align: center; justify-content: center;">
             <span style="font-size:25px; padding-top:4px; padding-right: 5vh;">다크모드</span>
