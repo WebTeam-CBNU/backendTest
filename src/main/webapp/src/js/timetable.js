@@ -40,15 +40,31 @@ selectEl.addEventListener('change', function onSelect(e) {
 
 function confirm(){
   const selectedWeekDay=document.getElementById("weekDay");
-  const selectedClassTime=document.getElementById("classTime");
+  const selectedClassStartTime=document.getElementById("classStartTime");
+  const selectedClassEndTime=document.getElementById("classEndTime");
   const professor = document.getElementById("professor").value;
   const building = document.getElementById("building").value;
   const classRoom = document.getElementById("classRoom").value;
 
 
   const hour=document.getElementsByClassName("hour");
-  const hourIndex=selectedWeekDay.selectedIndex * 9+selectedClassTime.selectedIndex;
-  hour[hourIndex].innerHTML=professor+"<br>"+building+"<br>"+classRoom;
+  const hourStartIndex=selectedWeekDay.selectedIndex * 9+selectedClassStartTime.selectedIndex;
+  const hourEndIndex=selectedWeekDay.selectedIndex * 9+selectedClassEndTime.selectedIndex;
+  for(i=hourStartIndex; i<hourEndIndex;i++){
+    if(i==hourStartIndex){
+      hour[i].innerHTML=professor+"<br>"+building+"<br>"+classRoom;
+      hour[i].classList.add('firstBlock');
+    }
+
+    
+    else if(i==hourEndIndex-1){
+      hour[i].innerHTML="";
+      hour[i].classList.add('lastBlock');
+    }
+
+    else hour[i].innerHTML="";
+  document.getElementsByClassName('hour')[i].classList.add("classNotToday");
+  }
 
 }
 
@@ -73,9 +89,18 @@ for(i=0;i<45;i++){
 
     for(j=0;j<45;j++){
       if(document.getElementsByClassName('hour')[j]==this) {
-        const dataN = document.getElementsByClassName('hour')[j].innerHTML;
-        document.getElementsByClassName('hour')[j].innerHTML=document.getElementsByClassName('hour')[e.dataTransfer.getData('data')].innerHTML;
-        document.getElementsByClassName('hour')[e.dataTransfer.getData('data')].innerHTML=dataN;
+        startIndex = e.dataTransfer.getData('data')
+        const EndInnerHTML = document.getElementsByClassName('hour')[j].innerHTML;
+        
+        document.getElementsByClassName('hour')[j].innerHTML=document.getElementsByClassName('hour')[startIndex].innerHTML;
+        document.getElementsByClassName('hour')[startIndex].innerHTML=EndInnerHTML;
+
+        while(document.getElementsByClassName('hour')[startIndex].classList.contains('classNotToday')!=document.getElementsByClassName('hour')[j].classList.contains('classNotToday')){
+            document.getElementsByClassName('hour')[startIndex].classList.toggle("classNotToday");
+            document.getElementsByClassName('hour')[j].classList.toggle("classNotToday");
+        }
+        
+
       }
     }
   }
