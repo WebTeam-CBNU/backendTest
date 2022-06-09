@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="innerbox" style="height: 90%;">
-            <div id="button1" class="button_default" onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onClick="location.href='timetableproto.html'">시간표</div>
+            <div id="button1" class="button_default" onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onClick="location.href='timetable.jsp'">시간표</div>
             <div id="button2" class="button_default" onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onClick="location.href='homeworklist.html'">과제 목록</div>
             <div id="button3" class="button_default" onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onClick="location.href='schedule.jsp'">오늘 할 일</div>
         </div>
