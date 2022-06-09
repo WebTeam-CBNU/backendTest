@@ -3,6 +3,7 @@ body {
     text-align: center;
     justify-content: center;
     background-color: #E4EBF5;
+    cursor: url(../cursor.png), default;
 }
 
 .body_dark_mode {
@@ -11,6 +12,7 @@ body {
     justify-content: center;
     background-color: #323745;
 }
+
 #box{
     display: flex;
     text-align: center;

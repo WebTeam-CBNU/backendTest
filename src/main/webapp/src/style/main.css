@@ -161,7 +161,7 @@ label.round{
     display:inline-block;
     width:100px;
     height:34px;
-    cursor:pointer;
+    cursor: url(../cursor.png), default;
     position:relative;
     background-color:#ccc;
 }
@@ -188,12 +188,14 @@ label.round::before{border-radius:50%}
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: url(../cursor.png), default;
     justify-content: center; 
    }
    
    audio {
      display: block;
      margin: 20px auto;
+     cursor: url(../cursor.png), default;
    }
    html {
     height: 100%;
