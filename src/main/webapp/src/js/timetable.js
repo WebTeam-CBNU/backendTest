@@ -37,6 +37,9 @@ selectEl.addEventListener('change', function onSelect(e) {
 // });
 
 
+let nowWeekDay = new Date().getDay()
+
+
 
 function confirm(){
   const selectedWeekDay=document.getElementById("weekDay");
@@ -66,6 +69,9 @@ function confirm(){
     }
 
   document.getElementsByClassName('hour')[i].classList.add("classNotToday");
+  if(parseInt(i/9)+1==nowWeekDay){
+    document.getElementsByClassName('hour')[i].classList.add("classToday");
+  }
   }
 
 }
@@ -110,13 +116,23 @@ for(i=0;i<45;i++){
               document.getElementsByClassName('hour')[startIndex].classList.toggle("lastBlock");
               document.getElementsByClassName('hour')[j].classList.toggle("lastBlock");
             }
+                
+            if(parseInt(j/9)+1==nowWeekDay&&document.getElementsByClassName('hour')[j].classList.contains('classNotToday')){
+              document.getElementsByClassName('hour')[j].classList.add("classToday");
+            }
+                
+            if(parseInt(startIndex/9)+1==nowWeekDay&&document.getElementsByClassName('hour')[startIndex].classList.contains('classToday')){
+              document.getElementsByClassName('hour')[startIndex].classList.remove("classToday");
+            }
 
           startIndex++;
           j++;
         }
         
+        //nowWeekDay
 
         }
+
       }
     }
   }
