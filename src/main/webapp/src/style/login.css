@@ -162,20 +162,20 @@
    transition: .5s;
    border: none;
    background-color: rgba(123, 123, 123,0.0);
-   color: #03e9f4;
+   color: #696b6b;
    cursor: url(../cursor.png), default;
    margin-top: 40px;
    letter-spacing: 4px
  }
 
  .register-box button:hover {
-    background: #03e9f4;
+    background: #696b6b;
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 2px #03e9f4,
-                0 0 4px #03e9f4,
-                0 0 8px #03e9f4,
-                0 0 16px #03e9f4;
+    box-shadow: 0 0 2px #696b6b,
+                0 0 4px #696b6b,
+                0 0 8px #696b6b,
+                0 0 16px #696b6b;
   }
 
 
