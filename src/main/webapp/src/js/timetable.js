@@ -51,18 +51,20 @@ function confirm(){
   const hourStartIndex=selectedWeekDay.selectedIndex * 9+selectedClassStartTime.selectedIndex;
   const hourEndIndex=selectedWeekDay.selectedIndex * 9+selectedClassEndTime.selectedIndex;
   for(i=hourStartIndex; i<hourEndIndex;i++){
+    
+    hour[i].innerHTML="";
+
     if(i==hourStartIndex){
       hour[i].innerHTML=professor+"<br>"+building+"<br>"+classRoom;
       hour[i].classList.add('firstBlock');
     }
 
     
-    else if(i==hourEndIndex-1){
+    if(i==hourEndIndex-1){
       hour[i].innerHTML="";
       hour[i].classList.add('lastBlock');
     }
 
-    else hour[i].innerHTML="";
   document.getElementsByClassName('hour')[i].classList.add("classNotToday");
   }
 
@@ -98,10 +100,23 @@ for(i=0;i<45;i++){
         while(document.getElementsByClassName('hour')[startIndex].classList.contains('classNotToday')!=document.getElementsByClassName('hour')[j].classList.contains('classNotToday')){
             document.getElementsByClassName('hour')[startIndex].classList.toggle("classNotToday");
             document.getElementsByClassName('hour')[j].classList.toggle("classNotToday");
+
+            if(document.getElementsByClassName('hour')[startIndex].classList.contains('firstBlock')!=document.getElementsByClassName('hour')[j].classList.contains('firstBlock')){
+              document.getElementsByClassName('hour')[startIndex].classList.toggle("firstBlock");
+              document.getElementsByClassName('hour')[j].classList.toggle("firstBlock");
+            }
+
+            if(document.getElementsByClassName('hour')[startIndex].classList.contains('lastBlock')!=document.getElementsByClassName('hour')[j].classList.contains('lastBlock')){
+              document.getElementsByClassName('hour')[startIndex].classList.toggle("lastBlock");
+              document.getElementsByClassName('hour')[j].classList.toggle("lastBlock");
+            }
+
+          startIndex++;
+          j++;
         }
         
 
+        }
       }
     }
   }
-}
