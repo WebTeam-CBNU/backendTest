@@ -20,6 +20,9 @@ public class UserDAO extends DbController {
         String query = "INSERT INTO user (name, password) VALUES (?, ?)";
         connect();
 
+        System.out.println("DB : " + user.getName());
+        System.out.println("DB : " + user.getPassword());
+
         PreparedStatement statement = this.getJdbcConnection().prepareStatement(query);
         statement.setString(1, user.getName());
         statement.setString(2, user.getPassword());

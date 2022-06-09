@@ -101,3 +101,17 @@ dialog form #box_button
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 	transform: translateY(-10px);
 }
+
+
+.classNotToday{
+	background-color: #CCC;
+}
+
+.firstBlock{
+	border-radius: 20px 20px 0px 0px;
+}
+
+.lastBlock{
+	border-radius: 0px 0px 20px 20px;
+}
+

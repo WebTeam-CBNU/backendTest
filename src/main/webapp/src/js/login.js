@@ -12,19 +12,25 @@ if ( typeof favDialog.showModal !== 'function' ) {
     */
   }
 
-  loginBtn.addEventListener('click', ()=> {
+function login(){
+    console.log("this is login")
     if (typeof favDialog.showModal === "function") {
-      favDialog.showModal();
-      // Cancel button
-      document.querySelectorAll(".user-box input").forEach((elememt)=>{
-          elememt.defaultValue = "test"
-      })
-      // Confirm button
+        favDialog.showModal();
+        // Cancel button
+        document.querySelectorAll(".user-box input").forEach((elememt)=>{
+            elememt.defaultValue = "test"
+        })
+        // Confirm button
     } else {
 
     }
     console.log("fuck")
-  })
+}
+
+function logout(){
+    console.log("this is logout")
+    document.cookie = 'JSESSIONID=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
 
   closeBtn.addEventListener('click', ()=> {
     favDialog.close();
