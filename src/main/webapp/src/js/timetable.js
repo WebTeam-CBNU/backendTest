@@ -40,47 +40,83 @@ selectEl.addEventListener('change', function onSelect(e) {
 
 function confirm(){
   const selectedWeekDay=document.getElementById("weekDay");
-  const selectedClassTime=document.getElementById("classTime");
+  const selectedClassStartTime=document.getElementById("classStartTime");
+  const selectedClassEndTime=document.getElementById("classEndTime");
   const professor = document.getElementById("professor").value;
   const building = document.getElementById("building").value;
   const classRoom = document.getElementById("classRoom").value;
 
 
   const hour=document.getElementsByClassName("hour");
-  const hourIndex=selectedWeekDay.selectedIndex * 9+selectedClassTime.selectedIndex;
-  hour[hourIndex].innerHTML=professor+"<br>"+building+"<br>"+classRoom;
+  const hourStartIndex=selectedWeekDay.selectedIndex * 9+selectedClassStartTime.selectedIndex;
+  const hourEndIndex=selectedWeekDay.selectedIndex * 9+selectedClassEndTime.selectedIndex;
+  for(i=hourStartIndex; i<hourEndIndex;i++){
+    
+    hour[i].innerHTML="";
+
+    if(i==hourStartIndex){
+      hour[i].innerHTML=professor+"<br>"+building+"<br>"+classRoom;
+      hour[i].classList.add('firstBlock');
+    }
+
+    
+    if(i==hourEndIndex-1){
+      hour[i].innerHTML="";
+      hour[i].classList.add('lastBlock');
+    }
+
+  document.getElementsByClassName('hour')[i].classList.add("classNotToday");
+  }
 
 }
 
 var i = 0
 
-document.getElementsByClassName('hour')
-  .forEach(()=>{
-    
-  })
-  .ondragstart(()=>{
+for(i=0;i<45;i++){
+  document.getElementsByClassName('hour')[i].ondragstart = function(e) {
+    for(j=0;j<45;j++){
+      if(document.getElementsByClassName('hour')[j]==this) e.dataTransfer.setData('data', j);
+    }
+  };
 
-  })
-//  = function(e) {
-  // const indexNum=i;
-  // console.log(indexNum);
-  // e.dataTransfer.setData('data', indexNum); // 드래그해보세요 문자열 전달
-
-document.getElementsByClassName('hour')[i].ondragover = function(e) {
-  e.preventDefault(); // 필수 이 부분이 없으면 ondrop 이벤트가 발생하지 않습니다.
-};
+  document.getElementsByClassName('hour')[i].ondragover = function(e) {
+    e.preventDefault(); // 필수 이 부분이 없으면 ondrop 이벤트가 발생하지 않습니다.
+  };
+}
 
 
-document.getElementsByClassName('hour')[1].ondrop = function(e) {
-  const dataN = document.getElementsByClassName('hour')[1].innerHTML;
-  document.getElementsByClassName('hour')[1].innerHTML=e.dataTransfer.getData('data');
-  document.getElementsByClassName('hour')[0].innerHTML=dataN;
-};
+for(i=0;i<45;i++){
+  document.getElementsByClassName('hour')[i].ondrop = function(e) {
 
 
+    for(j=0;j<45;j++){
+      if(document.getElementsByClassName('hour')[j]==this) {
+        startIndex = e.dataTransfer.getData('data')
+        const EndInnerHTML = document.getElementsByClassName('hour')[j].innerHTML;
+        
+        document.getElementsByClassName('hour')[j].innerHTML=document.getElementsByClassName('hour')[startIndex].innerHTML;
+        document.getElementsByClassName('hour')[startIndex].innerHTML=EndInnerHTML;
 
-document.getElementsByClassName('hour')[3].ondrop = function(e) {
-  const dataN = document.getElementsByClassName('hour')[3].innerHTML;
-  document.getElementsByClassName('hour')[3].innerHTML=e.dataTransfer.getData('data');
-  document.getElementsByClassName('hour')[2].innerHTML=dataN;
-};
+        while(document.getElementsByClassName('hour')[startIndex].classList.contains('classNotToday')!=document.getElementsByClassName('hour')[j].classList.contains('classNotToday')){
+            document.getElementsByClassName('hour')[startIndex].classList.toggle("classNotToday");
+            document.getElementsByClassName('hour')[j].classList.toggle("classNotToday");
+
+            if(document.getElementsByClassName('hour')[startIndex].classList.contains('firstBlock')!=document.getElementsByClassName('hour')[j].classList.contains('firstBlock')){
+              document.getElementsByClassName('hour')[startIndex].classList.toggle("firstBlock");
+              document.getElementsByClassName('hour')[j].classList.toggle("firstBlock");
+            }
+
+            if(document.getElementsByClassName('hour')[startIndex].classList.contains('lastBlock')!=document.getElementsByClassName('hour')[j].classList.contains('lastBlock')){
+              document.getElementsByClassName('hour')[startIndex].classList.toggle("lastBlock");
+              document.getElementsByClassName('hour')[j].classList.toggle("lastBlock");
+            }
+
+          startIndex++;
+          j++;
+        }
+        
+
+        }
+      }
+    }
+  }
