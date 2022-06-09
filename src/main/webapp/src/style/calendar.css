@@ -25,7 +25,6 @@
 }
 
 .button-container-calendar button {
-    cursor: pointer;
     display: inline-block;
     zoom: 1;
     background: #00a2b7;
