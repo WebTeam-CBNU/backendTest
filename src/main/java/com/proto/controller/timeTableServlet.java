@@ -12,11 +12,9 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
-import java.util.concurrent.TimeUnit;
 
 @WebServlet("/login")
-public class loginServlet extends HttpServlet {
+public class timeTableServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private UserDAO userDAO;
 
@@ -37,33 +35,16 @@ public class loginServlet extends HttpServlet {
             throws ServletException, IOException {
 
         try {
-            LoginUser(request, response);
+            showTable(request, response);
         } catch (SQLException e) {
             System.out.println("this is fucking Exception");
             throw new ServletException(e);
         }
     }
 
-    private void LoginUser(HttpServletRequest request, HttpServletResponse response)
+    private void showTable(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
-        String name = request.getParameter("login_name");
-        String password = request.getParameter("login_password");
 
 
-        UserDTO user = userDAO.getUserByName(name);
-        String dbPassword = user.getPassword();
-
-        PrintWriter out = response.getWriter();
-
-        if(password.equals(dbPassword)) {
-            HttpSession session = request.getSession();
-            session.setAttribute("userName", user.getName());
-            response.sendRedirect("src/jspFriends/main.jsp");
-        } else {
-            out.println("<script type=\"text/javascript\">");
-            out.println("alert('password incorrect!');");
-            out.println("location='src/jspFriends/main.jsp'");
-            out.println("</script>");
-        }
     }
 }
