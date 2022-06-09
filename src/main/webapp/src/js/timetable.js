@@ -51,3 +51,36 @@ function confirm(){
   hour[hourIndex].innerHTML=professor+"<br>"+building+"<br>"+classRoom;
 
 }
+
+var i = 0
+
+document.getElementsByClassName('hour')
+  .forEach(()=>{
+    
+  })
+  .ondragstart(()=>{
+
+  })
+//  = function(e) {
+  // const indexNum=i;
+  // console.log(indexNum);
+  // e.dataTransfer.setData('data', indexNum); // 드래그해보세요 문자열 전달
+
+document.getElementsByClassName('hour')[i].ondragover = function(e) {
+  e.preventDefault(); // 필수 이 부분이 없으면 ondrop 이벤트가 발생하지 않습니다.
+};
+
+
+document.getElementsByClassName('hour')[1].ondrop = function(e) {
+  const dataN = document.getElementsByClassName('hour')[1].innerHTML;
+  document.getElementsByClassName('hour')[1].innerHTML=e.dataTransfer.getData('data');
+  document.getElementsByClassName('hour')[0].innerHTML=dataN;
+};
+
+
+
+document.getElementsByClassName('hour')[3].ondrop = function(e) {
+  const dataN = document.getElementsByClassName('hour')[3].innerHTML;
+  document.getElementsByClassName('hour')[3].innerHTML=e.dataTransfer.getData('data');
+  document.getElementsByClassName('hour')[2].innerHTML=dataN;
+};
