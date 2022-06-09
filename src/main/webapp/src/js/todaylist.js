@@ -46,6 +46,20 @@ function showSchedule()
     }
 
 
+    function mouseDown() {
+        if(!document.getElementsByClassName(Monday)[0].classList.contains("clicked")){
+            document.getElementsByClassName(Monday)[0].classList.add("clicked");
+        }  
+      }
+      
+      
+      function mouseUp() {
+        if(document.getElementsByClassName(Monday)[0].classList.contains("clicked")){
+            document.getElementsByClassName(Monday)[0].classList.remove("clicked");
+        }  
+      }
+
+
     /*
     const allBox = Array.from(amBox).concat(Array.from(pmBox));
     Array.from(allBox).forEach((element) => {
@@ -66,76 +80,76 @@ function showSchedule()
     */
 }
 
-function Sunday_onmouseover(){
-     const day=document.getElementsByClassName("Sunday");
-    day[0].innerText="일요일 입니다";
-     day[0].style.color="red";
-    }
+// function Sunday_onmouseover(){
+//      const day=document.getElementsByClassName("Sunday");
+//     day[0].innerText="일요일 입니다";
+//      day[0].style.color="red";
+//     }
 
- function Sunday_onmouseout(){
-     const day=document.getElementsByClassName("Sunday");
-    day[0].innerText="Sun";
-    day[0].style.color="red";
-    }
+//  function Sunday_onmouseout(){
+//      const day=document.getElementsByClassName("Sunday");
+//     day[0].innerText="Sun";
+//     day[0].style.color="red";
+//     }
 
-function Monday_onmouseover(){
-    const day=document.getElementsByClassName("Monday");
-    day[0].innerText="월요일 입니다";
-    }
+// function Monday_onmouseover(){
+//     const day=document.getElementsByClassName("Monday");
+//     day[0].innerText="월요일 입니다";
+//     }
    
-function Monday_onmouseout(){
-    const day=document.getElementsByClassName("Monday");
-    day[0].innerText="Mon";
-    }
+// function Monday_onmouseout(){
+//     const day=document.getElementsByClassName("Monday");
+//     day[0].innerText="Mon";
+//     }
 
-function Tuesday_onmouseover(){
-const day=document.getElementsByClassName("Tuesday");
-day[0].innerText="화요일 입니다";
-}
+// function Tuesday_onmouseover(){
+// const day=document.getElementsByClassName("Tuesday");
+// day[0].innerText="화요일 입니다";
+// }
 
-function Tuesday_onmouseout(){
-    const day=document.getElementsByClassName("Tuesday");
-    day[0].innerText="Tue";
-    }
+// function Tuesday_onmouseout(){
+//     const day=document.getElementsByClassName("Tuesday");
+//     day[0].innerText="Tue";
+//     }
 
-function Wednesday_onmouseover(){
-    const day=document.getElementsByClassName("Wednesday");
-    day[0].innerText="수요일 입니다";
-}
+// function Wednesday_onmouseover(){
+//     const day=document.getElementsByClassName("Wednesday");
+//     day[0].innerText="수요일 입니다";
+// }
 
-function Wednesday_onmouseout(){
-    const day=document.getElementsByClassName("Wednesday");
-    day[0].innerText="Wed";
-}
+// function Wednesday_onmouseout(){
+//     const day=document.getElementsByClassName("Wednesday");
+//     day[0].innerText="Wed";
+// }
 
-function Thursday_onmouseover(){
-    const day=document.getElementsByClassName("Thursday");
-    day[0].innerText="목요일 입니다";
-}
+// function Thursday_onmouseover(){
+//     const day=document.getElementsByClassName("Thursday");
+//     day[0].innerText="목요일 입니다";
+// }
 
-function Thursday_onmouseout(){
-    const day=document.getElementsByClassName("Thursday");
-    day[0].innerText="Thu";
-}
+// function Thursday_onmouseout(){
+//     const day=document.getElementsByClassName("Thursday");
+//     day[0].innerText="Thu";
+// }
 
-    function Friday_onmouseover(){
-    const day=document.getElementsByClassName("Friday");
-    day[0].innerText="금요일 입니다";
-    }
+//     function Friday_onmouseover(){
+//     const day=document.getElementsByClassName("Friday");
+//     day[0].innerText="금요일 입니다";
+//     }
 
-function Friday_onmouseout(){
-    const day=document.getElementsByClassName("Friday");
-    day[0].innerText="Fri";
-    }
+// function Friday_onmouseout(){
+//     const day=document.getElementsByClassName("Friday");
+//     day[0].innerText="Fri";
+//     }
 
-    function Saturday_onmouseover(){
-    const day=document.getElementsByClassName("Saturday");
-    day[0].innerText="토요일 입니다";
-    }
+//     function Saturday_onmouseover(){
+//     const day=document.getElementsByClassName("Saturday");
+//     day[0].innerText="토요일 입니다";
+//     }
 
-function Saturday_onmouseout(){
-    const day=document.getElementsByClassName("Saturday");
-    day[0].innerText="Sat";
-    day[0].style.color="blue";
-    }
+// function Saturday_onmouseout(){
+//     const day=document.getElementsByClassName("Saturday");
+//     day[0].innerText="Sat";
+//     day[0].style.color="blue";
+//     }
     

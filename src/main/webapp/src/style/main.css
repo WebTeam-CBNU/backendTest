@@ -161,7 +161,7 @@ label.round{
     display:inline-block;
     width:100px;
     height:34px;
-    cursor: url(../cursor.png), default;
+    cursor: url(../cursor.png), auto;
     position:relative;
     background-color:#ccc;
 }
@@ -192,13 +192,20 @@ label.round::before{border-radius:50%}
     justify-content: center; 
    }
    
-   audio {
-     display: block;
-     margin: 20px auto;
-     cursor: url(../cursor.png), default;
-   }
-   html {
-    height: 100%;
-  }
+audio {
+    display: block;
+    margin: 20px auto;
+    cursor: url(../cursor.png), default;
+}
 
+source {
+    cursor: url(../cursor.png), pointer;;
+}
+
+html {
+    height: 100%;  
+}
+.player{
+    cursor: url(../cursor.png), default;
+}
 

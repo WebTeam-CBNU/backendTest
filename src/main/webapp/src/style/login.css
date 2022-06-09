@@ -70,7 +70,7 @@
    border: none;
    background-color: rgba(123, 123, 123,0.0);
    color: #03e9f4;
-   
+   cursor: url(../cursor.png), default;
    margin-top: 40px;
    letter-spacing: 4px
  }
@@ -83,6 +83,7 @@
                 0 0 4px #03e9f4,
                 0 0 8px #03e9f4,
                 0 0 16px #03e9f4;
+    cursor: url(../cursor.png), default;
   }
 
 
@@ -119,6 +120,7 @@
    position: relative;
    display: flex;
    flex-direction: column-reverse;
+   cursor: url(../cursor.png), default;
  }
  
  .register-box .user-registerbox input {
@@ -161,7 +163,7 @@
    border: none;
    background-color: rgba(123, 123, 123,0.0);
    color: #03e9f4;
-   
+   cursor: url(../cursor.png), default;
    margin-top: 40px;
    letter-spacing: 4px
  }

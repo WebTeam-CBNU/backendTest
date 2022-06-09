@@ -13,6 +13,8 @@
 	transform: translate(-50%, -50%);
   width : 30vw;
   height: 50vh;
+  font-family: 'Hahmlet', serif;
+  font-family: 'Kdam Thmor Pro', sans-serif;
 }
 
 #dailyTable {
@@ -22,6 +24,8 @@
 	transform: translate(-50%, -50%);
   width : 30vw;
   height: 50vh;
+  font-family: 'Hahmlet', serif;
+  font-family: 'Kdam Thmor Pro', sans-serif;
 }
 
 .Wtitle {
@@ -40,9 +44,21 @@
 .WBody div{
   padding-left: 5px;
   font-size: 18pt;
-  text-align: left;
-  border-top: 3px solid black;
+  text-align: center;
+  padding-top: 15px;
+
+  margin:12px;
+  border-radius: 20px;
+  
+  box-shadow: 2px 2px 6px 2px rgb(255, 255, 255) inset, -2px -2px 6px 2px rgb(196, 196, 196) inset;
+  
 }
+
+.WBody div .clicked{  
+  box-shadow: -2px -2px 6px 2px rgb(255, 255, 255) inset, 2px 2px 6px 2px rgb(196, 196, 196) inset;
+  
+}
+
 
 
 .Sunday{
@@ -56,12 +72,12 @@
 }
 
 .Saturday, .Friday {
-  border-bottom: 3px solid black;
+  /* border-bottom: 3px solid black; */
 
 }
 
 .Sunday, .Tuesday, .Thursday, .Saturday {
-  border-left: 3px solid black;
+  /* border-left: 3px solid black; */
 }
 
 .Dtitle {
@@ -79,7 +95,10 @@
   border-bottom: 1px solid black;
 }
 
-.am, .pm, .blank, .leftBox, .timeTable, .rightBox {
+.am, .pm, .blank, .leftBox, .timeTable, .rightBox .lastline {
+  border-bottom: 1px solid black;
+}
+.rightBox{
   border-bottom: 1px solid black;
 }
 
@@ -87,18 +106,22 @@
   height: 20px;
 }
 
+.lastblank{
+  height: 20px;
+}
+
 .am, .pm, .leftBox, .rightBox{
   grid-column: span 8;
 }
 
-.blank, .timeTable{
+.lastblank .blank, .timeTable{
   grid-column: span 1;
 }
 
 .leftBox, .timeTable, .rightBox {
   padding-top: 1vh;
   padding-bottom: 1vh;
-  height: 46vh;
+  height: 52vh;
   line-height: 95%;
 }
 
@@ -119,24 +142,9 @@
   padding-top: 0.5vh;
 }
 
-.checkbox {
-  padding-left: 5px;
-  grid-column: span 9;
-  text-align: left;
-}
 
-.plsBtn {
-  padding-right: 5px;
-  grid-column: 10 / 18;
-  text-align: right;
-}
 
-.plsBtn button {
-  background-color: aliceblue;
-  border: none;
-  border-radius: 20%;
-  box-shadow: 1px 1px 1px 1px rgb(196, 196, 196);
-}
+
 
 .checklist {
   padding-left: 5px;
@@ -155,4 +163,9 @@
 p {
   margin-block-start: 0em;
   margin-block-end: 0em;
+}
+.WBody div:active {
+  background-color: #E4EBF5;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
