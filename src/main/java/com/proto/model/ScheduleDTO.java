@@ -1,18 +1,16 @@
 package com.proto.model;
 
-import java.util.Date;
-
 public class ScheduleDTO {
     private int id;
-    private int user_id;
+    private String user_id;
     private int dayOfWeek;
-    private Date start_time;
-    private Date end_time;
+    private int start_time;
+    private int end_time;
     private String prof;
     private String building;
     private String room;
 
-    public ScheduleDTO(int id, int user_id, int dayOfWeek, Date start_time, Date end_time, String prof, String building, String room) {
+    public ScheduleDTO(int id, String user_id, int dayOfWeek, int start_time, int end_time, String prof, String building, String room) {
         this.id = id;
         this.user_id = user_id;
         this.dayOfWeek = dayOfWeek;
@@ -27,7 +25,7 @@ public class ScheduleDTO {
         return id;
     }
 
-    public int getUser_id() {
+    public String getUser_id() {
         return user_id;
     }
 
@@ -35,11 +33,11 @@ public class ScheduleDTO {
         return dayOfWeek;
     }
 
-    public Date getStart_time() {
+    public int getStart_time() {
         return start_time;
     }
 
-    public Date getEnd_time() {
+    public int getEnd_time() {
         return end_time;
     }
 

@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.proto.model.ScheduleDTO" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: gimsangsu
   Date: 2022/06/10
@@ -25,6 +26,11 @@
     <title>재민이가 만드는 일정 페이지입니다</title>
 </head>
 <body>
+
+<%
+    List<ScheduleDTO> newSC = (List<ScheduleDTO>) session.getAttribute("scheduleData");
+%>
+
 <div id="box" class="box">
     <div class="homebutton">
         <a href="main.jsp">HOME</a>
@@ -50,7 +56,13 @@
                 <div>9교시<br>17:00 ~ 18:00</div>
             </div>
             <div class="schedule">
-                <div class="hour" draggable="true"></div>
+                <div class="hour" draggable="true"><%=
+                    newSC.get(0).getProf()
+                %><br><%=
+                    newSC.get(0).getBuilding()
+                %><br><%=
+                    newSC.get(0).getRoom()
+                %></div>
                 <div class="hour" draggable="true"></div>
                 <div class="hour" draggable="true"></div>
                 <div class="hour" draggable="true"></div>

@@ -19,10 +19,10 @@ public class ScheduleDAO extends DbController {
 
         PreparedStatement statement = this.getJdbcConnection().prepareStatement(query);
         statement.setInt(1, schedule.getId());
-        statement.setInt(2, schedule.getUser_id());
+        statement.setString(2, schedule.getUser_id());
         statement.setInt(3, schedule.getDayOfWeek());
-        statement.setDate(4, new java.sql.Date(schedule.getStart_time().getTime()));
-        statement.setDate(5, new java.sql.Date(schedule.getEnd_time().getTime()));
+        statement.setInt(4, schedule.getStart_time());
+        statement.setInt(5, schedule.getEnd_time());
         statement.setString(6, schedule.getProf());
         statement.setString(7, schedule.getBuilding());
         statement.setString(8, schedule.getRoom());
@@ -45,10 +45,10 @@ public class ScheduleDAO extends DbController {
 
         while (resultSet.next()){
             int id = resultSet.getInt("id");
-            int user_id = resultSet.getInt("user_id");
+            String user_id = resultSet.getString("user_id");
             int dayOfWeek = resultSet.getInt("dayOfWeek");
-            Date start_time = resultSet.getDate("start_time");
-            Date end_time = resultSet.getDate("end_time");
+            int start_time = resultSet.getInt("start_time");
+            int end_time = resultSet.getInt("end_time");
             String prof = resultSet.getString("prof");
             String building = resultSet.getString("building");
             String room = resultSet.getString("room");
@@ -78,25 +78,25 @@ public class ScheduleDAO extends DbController {
         disconnect();
         return rowDeleted;
     }
-    // update
-    public boolean updateSchedule(ScheduleDTO schedule) throws SQLException {
-        String query = "UPDATE schedule SET dayOfWeek = ?, start_time = ?, end_time = ?";
+    // upint
+    public boolean upintSchedule(ScheduleDTO schedule) throws SQLException {
+        String query = "UPint schedule SET dayOfWeek = ?, start_time = ?, end_time = ?";
         query += " WHERE id = ?";
         connect();
 
         PreparedStatement statement = this.getJdbcConnection().prepareStatement(query);
         statement.setInt(1, schedule.getDayOfWeek());
-        statement.setDate(2, new java.sql.Date(schedule.getStart_time().getTime()));
-        statement.setDate(3, new java.sql.Date(schedule.getEnd_time().getTime()));
+        statement.setInt(2, schedule.getEnd_time());
+        statement.setInt(4, schedule.getStart_time());
         statement.setInt(4, schedule.getId());
 
-        boolean rowUpdated = statement.executeUpdate() > 0;
+        boolean rowUpintd = statement.executeUpdate() > 0;
         statement.close();
         disconnect();
-        return rowUpdated;
+        return rowUpintd;
     }
 
-    // getByName 그런게 필요할까?
+    //
     public List<ScheduleDTO> getByUserName(String name) throws SQLException {
         List<ScheduleDTO> mySchedules = new ArrayList<>();
         String query = "SELECT * FROM schedule WHERE user_id = ?";
@@ -110,10 +110,10 @@ public class ScheduleDAO extends DbController {
 
         if(resultSet.next()) {
             int id = resultSet.getInt("id");
-            int user_id = resultSet.getInt("user_id");
+            String user_id = resultSet.getString("user_id");
             int dayOfWeek = resultSet.getInt("dayOfWeek");
-            Date start_time = resultSet.getDate("start_time");
-            Date end_time = resultSet.getDate("end_time");
+            int start_time = resultSet.getInt("start_time");
+            int end_time = resultSet.getInt("end_time");
             String prof = resultSet.getString("prof");
             String building = resultSet.getString("building");
             String room = resultSet.getString("room");
@@ -136,10 +136,10 @@ public class ScheduleDAO extends DbController {
         ResultSet resultSet = statement.executeQuery();
 
         if(resultSet.next()) {
-            int user_id = resultSet.getInt("user_id");
+            String user_id = resultSet.getString("user_id");
             int dayOfWeek = resultSet.getInt("dayOfWeek");
-            Date start_time = resultSet.getDate("start_time");
-            Date end_time = resultSet.getDate("end_time");
+            int start_time = resultSet.getInt("start_time");
+            int end_time = resultSet.getInt("end_time");
             String prof = resultSet.getString("prof");
             String building = resultSet.getString("building");
             String room = resultSet.getString("room");
